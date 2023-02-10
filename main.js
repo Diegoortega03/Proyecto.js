@@ -11,7 +11,7 @@ let edad=prompt("Ingrese su edad");
 if (edad>=18 && usuario_logueado=="Diego" ){   
 ;
 
-    
+
 function conversion(moneda,monto){
     if (moneda == "dolar"){
         let resultado=monto*185;
@@ -75,6 +75,27 @@ while(monto!= "SALIR"){
  
 }
  
+//agregando objetos 
+
+
+let lista_usuarios= [   
+{nombre: "Diego",
+  edad:20,
+  Nacionalidad:"Argentino/a",
+}, 
+
+{nombre: "Julieta",
+edad:20,
+Nacionalidad:"Argentino/a",
+},
+
+{nombre: "Pepe",
+edad:20,
+Nacionalidad:"Argentino/a",
+}
+
+]   
+
 
 
 
