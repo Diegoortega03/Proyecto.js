@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONVERSION.ONLINE</title>
+    <link rel="stylesheet" href="../css/style.css">
+    
+</head>
+
+<body>
+
+    <div class="Container_home">
+
+    <header>
+    <h1>CONVERSION.ONLINE</h1>
+
+    </header>
+
+    <main>
+
+        <div class="form">
+  <form class="formulario"> 
+
+    <div class="dolar">
+        <input class="botonCambio" type="radio" name="moneda" id="dolar">DOLAR
+        <p>COTIZACION ACTUAL:$377</p>
+    
+    </div>
+
+       <div class="euro"><input class="botonCambio" type="radio" name="moneda"  id="euro">EURO
+        <p>COTIZACION ACTUAL:$400</p></div>
+
+        <div class="libra"><input class="botonCambio" type="radio" name="moneda" id="libra esterlina">LIBRA ESTERLINA
+        <p>COTIZACION ACTUAL:$333</p></div>
+       <div> <p>Ingrese monto a cambiar</p>
+        <input type="number" id="monto" >
+        <input type="button" id="cambio" value="cambiar" onclick="convertir()">
+        </div>
+        <h2 id="resultado">Resultado:$0.00</h2></form> 
+        
+
+    </div>
+</main>
+
+
+<footer>
+
+    
+</footer>
+    <script src="../pages/js/conversion.js"></script>
+
+
+</div>
+</body>
+</html>

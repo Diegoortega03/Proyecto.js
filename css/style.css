@@ -1,0 +1,135 @@
+*{margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;}
+    
+    
+    
+    .Container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        background-color: #339FFF;
+        
+        
+       
+    }   
+    
+    .form_index{
+        width: 300px;
+        height: 300px;
+        background-color: whitesmoke;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 2rem;
+        
+    }
+    
+    .form-usuario{
+        padding: 1rem;
+        margin: 0.5rem;
+        
+    }
+    
+    
+    .boton{
+        margin: 0.5rem;
+        background-color: rgb(105, 175, 231);
+        border: none;
+        border-radius: 5%;
+        height: 25px;
+        width: 130px;
+    }
+    .boton:hover {
+        scale: 1.1;
+        color: antiquewhite;
+    }
+    
+    .warnings{
+    
+    
+        color: red;
+        text-align: center;
+        font-size: 0.6rem;
+        
+    }
+    
+    
+    .warnings_dos{
+    
+    
+        color: green;
+        text-align: center;
+        font-size: 0.6rem;
+        
+    }
+    
+    .Container_home{
+    
+        background-color: #339FFF;
+        flex-direction: column;
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    
+    header h1{
+            padding-top: 2rem;
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+            height: 100px;
+            background-color: #339FFF;}
+    
+    
+    .form{
+    
+       
+        display: flex;
+        align-items: center;
+        border-radius: 5%;
+        background-color: white;
+        width: 500px;
+        justify-content: center;
+        margin-left: 28rem;
+        
+        
+    }
+    
+    .formulario
+    {
+    
+        margin: 1rem;
+        padding:2rem ;
+    
+    }
+    
+    .dolar{
+        margin: 1rem;
+        background-color: whitesmoke;
+    
+        
+    }
+    
+    .euro{
+        margin: 1rem;
+        background-color: whitesmoke;
+    }
+    
+    .libra{
+        margin: 1rem;
+        background-color: whitesmoke;
+    }
+    
+    
+    p{
+        font-size: 14px;
+    }
+    
+    
+    

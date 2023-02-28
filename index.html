@@ -4,11 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VARIABLES</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>LOG IN</title>
 </head>
 <body>
+
+  <header>
+  
+</header>
+
+<main>
+    <div class="Container">
+       <form action="" id="form"> <div class="form_index">
+          <div>  <input id="usuario" type="text" class="form-usuario" name="username" placeholder="ingrese nombre de usuario" >
+          </div>
+          <div>  <input id="mail" type="email" class="form-usuario" name="username" placeholder="ingrese mail" >
+          </div>
+          <div><input id="password" type="password" class="form-usuario" name="password" placeholder="ingrese contraseña" >
+          </div>
+            <div><button type="submit" id="boton_registro" class="boton"onclick="alta_usuario">REGISTRATE</button>
+            
+            </div>
+
+            <p class="warnings"id="warnings"></p>
+            <p class="warnings_dos"id="warnings_dos"></p>
+         </form>
+        </div>
+      
+          <div class="form_index">
+         
+            <div>  <input id="mail_login" type="mail" class="form-usuario" name="username" placeholder="ingrese mail" >
+            </div>
+            <div><input id="password_login" type="password" class="form-usuario" name="password" placeholder="ingrese contraseña" >
+            </div>
+            
+            <div><button id="boton_login" class="boton" onclick="login_usuario">INICIAR SESION</button></div>
+            <p class="warnings"id="warnings_login"></p>
+        
+          
+
+          
+     
+         </div>
+
+        </main>
+
+
+        <footer></footer>
+
+        
+
     
-    <h1>SEGUNDA PREENTREGA</h1>
-    <script src="main2.js"></script>
+    </div>
+
+    <script src="pages/js/conversion.js"></script>
 </body>
 </html>
