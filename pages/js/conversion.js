@@ -1,133 +1,53 @@
-//----CREANDO LOG IN----------------//
 
 
-let arr_usuarios=[];
-let form=document.getElementById("form")
-let entrar=false;
+ //agregando fetch 
 
 
-form.addEventListener("submit", e=>{ 
-    e.preventDefault()
-    if(password.value.length<8){
-        document.getElementById("warnings").innerHTML="contraseña demasiado corta (mas de 8 caracteres) " 
-        entrar=true
-        
-    }
-
-    
-    else if (password.value.length >=8) {
-        document.getElementById("warnings_dos").innerHTML="usuario registrado con exito"
-    }
-} )
+const moneda_uno = document.getElementById('moneda-uno');
+const moneda_dos = document.getElementById('moneda-dos');
+const cantidad_uno = document.getElementById('cantidad-uno');
+const cantidad_dos = document.getElementById('cantidad-dos');
+const cambio = document.getElementById('cambio');
+const taza = document.getElementById('taza');
 
 
 
+function calculate(){
+    const monedaEl_one = moneda_uno.value;
+    const monedaEl_two = moneda_dos.value;
 
+   fetch(`https://api.exchangerate-api.com/v4/latest/${monedaEl_one}`)
+   .then(res => res.json() )
+   .then(data => {
+       const taza = data.rates[monedaEl_two];
+       
+       cambio.innerText = `1 ${monedaEl_one} = ${taza} ${monedaEl_two}`;
 
-function alta_usuario(){
+       cantidad_dos.value = (cantidad_uno.value * taza).toFixed(2);
 
-
-   
-    let username= document.getElementById("usuario");
-    let password=document.getElementById("password");
-    let mail=document.getElementById("mail")
-    
-
-
-   
-
-
-console.log(username);
-
-let user={nombre:username.value , contraseña:password.value , mail:mail.value};
-
-arr_usuarios.push(user);
-
-
-let arr_JSON=JSON.stringify(arr_usuarios);
-
-localStorage.setItem("arr_usuarios", arr_JSON)
-
-
-}
-
-function login_usuario(){
-
-
-    let arr= localStorage.getItem("arr_usuarios")
-
-    arr=JSON.parse(arr)
-
-    
-    let contraseña=document.getElementById("password_login").value;
-    let mail=document.getElementById("mail_login").value;
-
-    
-    for( let user of arr){
-
-       if(mail==user.mail && contraseña==user.contraseña && mail!="" && contraseña!=""  && entrar==false){ 
-           location.href="./pages/home.html"
-
-        }
-
-        else {
-            
-
-            document.getElementById("warnings_login").innerHTML="usuario o contraseña incorrectos" 
-        }
-    
-
-
-} 
-
-
+    } );
     
 }
 
+//Event listeners
+moneda_uno.addEventListener('change', calculate);
+cantidad_uno.addEventListener('input', calculate);
+moneda_dos.addEventListener('change', calculate);
+cantidad_dos.addEventListener('input', calculate);
+
+taza.addEventListener('click', () =>{
+    const temp = moneda_uno.value;
+    moneda_uno.value = moneda_dos.value;
+    moneda_dos.value = temp;
+    calculate();
+} );
 
 
-let boton_registro =document.getElementById("boton_registro");
-let boton_login=document.getElementById("boton_login")
+calculate();
 
 
 
-boton_registro.addEventListener("click", alta_usuario
-);
 
-boton_login.addEventListener("click", login_usuario
-);
-
-
-//funcion convertir 
-
-function convertir(){
-
-    let valor =parseInt (document.getElementById("monto").value)
-    let resultado=0;
-    let dolar= 377;
-    let euro= 400;
-    let libra= 333;
-
-    if(document.getElementById("dolar").checked){
-        resultado= valor/dolar;
-        document.getElementById("resultado").innerHTML="Resultado: $"+ resultado.toFixed(2)
-    }
-
-    else if(document.getElementById("euro").checked){
-
-        resultado=valor/euro;
-        document.getElementById("resultado").innerHTML="Resultado: €"+ resultado.toFixed(2)
-    }
-
-    else if(document.getElementById("libra esterlina").checked)
-    {   resultado=valor/libra;
-    document.getElementById("resultado").innerHTML="Resultado: £"+ resultado.toFixed(2)}
-
-    else{alert("completa todos los campos para convertir monto")}
-
-}
-
- 
 
 
 
